@@ -1,0 +1,403 @@
+
+/* =====================================
+   1. BASIC SETTINGS
+===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 20px 12px;
+  background: #edf2f8;
+  color: #243247;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
+}
+
+/* =====================================
+   2. HEADER
+===================================== */
+
+.header {
+  padding: 25px 16px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #10345c, #2879c7);
+  border-radius: 14px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  border: 1px solid #ffffff70;
+  border-radius: 14px;
+  font-weight: bold;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.header p {
+  margin: 5px 0 0;
+}
+
+/* =====================================
+   3. PANELS
+===================================== */
+
+.panel {
+  margin-top: 18px;
+  padding: 22px;
+  background: white;
+  border: 1px solid #dce5f0;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px #17375e0a;
+}
+
+h2 {
+  margin-top: 0;
+  color: #174a83;
+  font-size: 20px;
+}
+
+.hint,
+#listMessage,
+#message,
+#photoMessage {
+  color: #68778b;
+  font-size: 14px;
+}
+
+/* =====================================
+   4. STUDENT FORM
+===================================== */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  min-width: 0;
+  padding: 12px;
+  background: #fbfcfe;
+  border: 1px solid #dce5f0;
+  border-radius: 9px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  min-height: 43px;
+  padding: 10px;
+  border: 1px solid #cbd6e4;
+  border-radius: 7px;
+  font: inherit;
+  color: #243247;
+  background: white;
+}
+
+textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #dcecff;
+  border-color: #174a83;
+}
+
+/* =====================================
+   5. BUTTONS
+===================================== */
+
+button {
+  min-height: 43px;
+  margin: 8px 5px 8px 0;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 7px;
+  background: #174a83;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #10345c;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#studentSearch {
+  margin-bottom: 10px;
+}
+
+/* =====================================
+   6. STUDENT TABLE
+===================================== */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  padding: 9px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #edf2f8;
+  color: #174a83;
+}
+
+.student-action {
+  white-space: nowrap;
+}
+
+/* =====================================
+   7. STUDENT DETAILS
+===================================== */
+
+#studentDetails {
+  margin-top: 20px;
+}
+
+.detail-row {
+  padding: 9px 0;
+  border-bottom: 1px solid #ddd;
+  overflow-wrap: anywhere;
+}
+
+.detail-row strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* =====================================
+   8. TEMPLATE PHOTO
+===================================== */
+
+#templatePhoto {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+#templateImage {
+  display: block;
+}
+
+/* =====================================
+   9. A4 PRINT AREA
+===================================== */
+
+#printArea {
+  position: relative;
+  display: none;
+  width: 210mm;
+  height: 297mm;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: white;
+  box-sizing: border-box;
+}
+
+#printArea[hidden] {
+  display: none !important;
+}
+
+#templateImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#printFields {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.print-field {
+  position: absolute;
+  color: #111;
+  font-family: Arial, sans-serif;
+  font-size: 9pt;
+  font-weight: normal;
+  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+}
+
+/* =====================================
+   10. MOBILE RESPONSIVE
+===================================== */
+
+@media screen and (max-width: 520px) {
+  body {
+    padding: 8px;
+  }
+
+  .panel {
+    padding: 14px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 7px;
+    font-size: 13px;
+  }
+}
+
+/* =====================================
+   11. PRINT PAGE SETTINGS
+===================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #printArea,
+  #printArea * {
+    visibility: visible !important;
+  }
+
+  #printArea {
+    position: absolute !important;
+    display: block !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    background: white !important;
+    box-sizing: border-box !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  #templateImage {
+    position: absolute !important;
+    display: block !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    object-fit: fill !important;
+  }
+
+  #printFields {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .print-field {
+    position: absolute !important;
+    color: #111 !important;
+    font-size: 9pt;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    display: none !important;
+  }
+}
+
+.print-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+

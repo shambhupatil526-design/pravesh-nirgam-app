@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>विद्यार्थी नोंदणी</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<main class="container">
+
+  <header class="header">
+    <div class="logo">VN</div>
+    <h1>विद्यार्थी नोंदणी</h1>
+    <p>प्रवेश व निर्गम नोंदणी फॉर्म</p>
+  </header>
+
+  <section class="panel">
+    <h2>विद्यार्थी यादी</h2>
+    <input type="search" id="studentSearch"
+      placeholder="नाव किंवा प्रवेश अनुक्रमांक शोधा...">
+    <button type="button" id="refreshStudents">
+      विद्यार्थी यादी रिफ्रेश करा
+    </button>
+    <p id="listMessage" aria-live="polite">यादी लोड होत आहे...</p>
+    <div id="studentList"></div>
+
+    <section id="studentDetails" hidden>
+      <h2>विद्यार्थ्याची संपूर्ण माहिती</h2>
+      <div id="detailsContent"></div>
+      <button type="button" id="closeDetails">यादीकडे परत जा</button>
+    </section>
+  </section>
+
+  <form id="studentForm" class="panel">
+    <h2>नवीन विद्यार्थ्याची नोंदणी</h2>
+    <p class="hint">* आवश्यक माहिती</p>
+    <div id="formFields" class="form-grid"></div>
+    <button type="submit" id="submitButton">नोंद सेव्ह करा</button>
+    <p id="message" aria-live="polite"></p>
+  </form>
+
+  <section class="panel">
+    <h2>मूळ प्रवेश-निर्गम पत्रक</h2>
+    <p>तुमच्या मूळ पत्रकाचा फोटो एकदा निवडा.</p>
+    <input type="file" id="templatePhoto" accept="image/jpeg,image/png">
+    <p id="photoMessage" aria-live="polite"></p>
+  </section>
+
+  <section id="printArea" hidden>
+    <img id="templateImage" alt="मूळ प्रवेश-निर्गम पत्रक">
+    <div id="printFields"></div>
+  </section>
+
+</main>
+<script src="Script.js"></script>
+</body>
+</html>
